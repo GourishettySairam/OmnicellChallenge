@@ -115,7 +115,7 @@ import React, {
   
     return (
       <div {...props} className="split-pane-bottom">
-        Current <b>quote id</b>: {currPost}
+        Current <b>filteredPost id</b>: {currPost}
       </div>
     );
   };
@@ -139,33 +139,27 @@ import React, {
   
   export const SplitPaneRight = (props) => {
     const { posts, currPost, setPosts } = useContext(DataContext);
-    const quote = posts.find((el) => el.id === currPost);
+    const filteredPost = posts.find((el) => el.id === currPost);
   
     return (
       <div {...props} className="split-pane-right">
-        <div className="quote">
-          {/* <blockquote>{quote.likes}</blockquote>—{" "}
-          <span>{quote.likes}</span> */}
-          <img src={quote?.Image} alt="n/A" width={500} height={500} ></img>
+        <div className="filteredPost">
+          <img src={filteredPost?.Image} alt="n/A" width={500} height={500} ></img>
           <br />
-          Likes: {quote?.likes}
+          Likes: {filteredPost?.likes}
           <br />
-          Time: {quote?.timestamp}
-          {/* Hi Sairam
-          {JSON.stringify(quote)} */}
+          Time: {filteredPost?.timestamp}
           <br />
           <button onClick={() => {
-            quote.likes = quote.likes + 1;
+            filteredPost.likes = filteredPost.likes + 1;
             setPosts(posts.map(post => {
-              if(post.id == quote.id) {
+              if(post.id == filteredPost.id) {
                 return {
-                 ...quote
+                 ...filteredPost
                 }
               } 
               return post;
             }));
-            console.log(posts);
-            console.log(quote);
           }}>Like</button>
         </div>
       </div>
