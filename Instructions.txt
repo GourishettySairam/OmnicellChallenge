@@ -1,6 +1,6 @@
 1. Navigate to instagram-preview directory
 
-2. run yarn install to install the dependancies
+2. run "yarn install" to install the dependancies and then run "yarn start"
 
 3. the application opens on localhost:3000
 
