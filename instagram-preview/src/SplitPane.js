@@ -82,6 +82,7 @@ import React, {
   
       topRef.current.style.minHeight = clientHeight + "px";
       topRef.current.style.maxHeight = clientHeight + "px";
+      // eslint-disable-next-line
     }, [clientHeight]);
   
     return (
@@ -99,7 +100,7 @@ import React, {
           {posts.map((el, i) => {
             return (
               <li key={i}>
-                <img src={el.Image} width={80} height={80} onClick={() => {
+                <img src={el.Image} alt="not available" width={80} height={80} onClick={() => {
                   setCurrPost(el.id);
                 }}></img>Likes: {el.likes}
               </li>
@@ -132,6 +133,7 @@ import React, {
   
       topRef.current.style.minWidth = clientWidth + "px";
       topRef.current.style.maxWidth = clientWidth + "px";
+      // eslint-disable-next-line
     }, [clientWidth]);
   
     return <div {...props} className="split-pane-left" ref={topRef} />;
@@ -153,7 +155,7 @@ import React, {
           <button onClick={() => {
             filteredPost.likes = filteredPost.likes + 1;
             setPosts(posts.map(post => {
-              if(post.id == filteredPost.id) {
+              if(post.id === filteredPost.id) {
                 return {
                  ...filteredPost
                 }

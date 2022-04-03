@@ -17,8 +17,8 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get("https://s3-ap-southeast-1.amazonaws.com/he-public-data/instaf913f18.json").
-    then(res => {
+    axios.get("https://s3-ap-southeast-1.amazonaws.com/he-public-data/instaf913f18.json")
+    .then(res => {
       // alert(res);
       var count = 1;
       res.data = res.data.map(ele => {
@@ -32,6 +32,7 @@ function App() {
       setPosts(res.data);
     })
     .catch((err) => err);
+    // eslint-disable-next-line
   }, []);
 
   return (
