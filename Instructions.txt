@@ -1,0 +1,14 @@
+1. Navigate to instagram-preview directory
+
+2. run yarn install to install the dependancies
+
+3. the application opens on localhost:3000
+
+4. In the left panel, the images are displayed along with their like count
+
+5. Click on an image to view it in the right side panel
+
+6. We can sort the images on left side based on likes count, by clicking on the "Sort By Likes" button
+
+7. On the right side, clicking on "like" button increases the like count for that particular image, and the same is updated on the left panel
+
